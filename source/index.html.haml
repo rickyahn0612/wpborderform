@@ -1,826 +1,223 @@
 ---
 title: WPB Order Form
 ---
+
 // Client Login Form
-#master
-  #content_frame
-    #content_left
-      %div.form_background_client_login
-        %h2.order_form_header CLIENT LOGIN
-        %form{:action => "", :autocomplete => "on"}
-          %span.label_for_order_form Email:
-          %br
-          %input.form_style{:name => "email", :type => "email"}
-          %br
-          %br
-          %span.label_for_order_form Password:
-          %br
-          %input.form_style{:name => "password", :type => "text"}
-          %br
-          %br
-          %button.btn_style{type: "submit", value: "Submit"}
-            SIGN IN
-          %br
-          %br
-          %h2.order_form_header HELP GUIDES
-          %button.btn_style
-            DOWNLOAD PDF GUIDE
-          %br
-          %br
-          %a#dialog-link.ui-corner-all
-            %button.btn_style
-              WATCH ONLINE GUIDE
-          #dialog{title: "Watch WPB Online Guide"}
-            %iframe#video{:allowfullscreen => "", :frameborder => "0", :height => "315", :width => "600", style:'position: relative; right: 20px;'}
-    #content_right
-      %div.vertical_line
-      %h3.order_form_header SIGN UP
-      %p
-        Please register to create a new online account so you can send us jobs anytime and anywhere.
-      %button.btn_style
-        REGISTER NOW
-      %h3.order_form_header DON'T WANT TO CREATE AN ACCOUNT?
-      %p
-        You can place a job without an account.  But we recommend an account so you can check you job status and see your job history.
-      %button.btn_style
-        ORDER NOW
-      %h3.order_form_header
-        For more information contact us
-      %p
-        Email: 
-        %a{:href => "mailto:ask@wpbinc.com", target: '_blank'}ask@wpbinc.com
-      %p
-        Phone: (423) 235-2352
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ORDER FORM
-#master
-  #content_frame
-    %br
-    %hr
-    %div.circle_active{style: 'float: left;'}
-      %span.progress_number 1
-    %span.progress_description_active Order Form
-    %div.circle{style: 'float: left; margin-left: 110px;'}
-      %span.progress_number 2
-    %span.progress_description Add Job Type
-    %div.circle{style: 'float: left; margin-left: 120px;'}
-      %span.progress_number 3
-    %span.progress_description Upload Files
-    %br
-    %br
-    %hr
-    %h2.order_form_header{style: 'margin-left: 14px;'} ORDER FORM
-    %div.form_background
-      %form{:action => "", :autocomplete => "on"}
-        %div.form_field{style: 'float: left;'}
-          %span.label_for_order_form First Name <span class="required">*</span>
-          %br
-          %input.form_style{:name => "fname", :type => "text"}
-        %div.form_field{style: 'float: left; margin-left: 15px;'}
-          %span.label_for_order_form Last name: <span class="required">*</span>
-          %br
-          %input.form_style{:name => "lname", :type => "text"}
-        %br
-        %br
-        %br
-        %span.label_for_order_form Email <span class="required">*</span>
-        %br
-        %input.form_style{:name => "email", :type => "email"}
-    %br
-    %h2.order_form_header{style: 'margin-left: 14px;'} BILLING INFORMATION
-    %div.form_background
-      %div.form_field{style: 'float: left;'}
-        %span.label_for_order_form Company <span class="required">*</span>
-        %br
-        %input.form_style{:name => "company", :type => "text"}
-      %div.form_field{style: 'float: left; margin-left: 15px;margin-top: 3px;'}
-        %span.label_for_order_form Bill to Name
-        %br
-        %input.form_style{:name => "billtoname", :type => "text"}
+#main_frame_order_form
+  #content_left_signup_form
+    %form{:action => "", :autocomplete => "on"}
+      %h3.signin-header CLIENT LOGIN
+      %span.label_for_order_form Email:
+      %br
+      %input.form_style{:name => "email", :type => "email"}
+      %br
+      %br
+      %span.label_for_order_form Password:
+      %br
+      %input.form_style{:name => "password", :type => "text"}
+      %br
+      %br
+      %button.btn_style_order_form{type: "submit", value: "Submit"}
+        SIGN IN
+      %br
+      %br
+      %h3.signin-header HELP GUIDES
+      %a{:href => ""}
+        %img{:src => "img/PDF-Icon.gif", style:'width: 45px; float: left;'}
+          %h3.signin-header{style: 'float: left; text-decoration: underline; font-size: 13px; position: relative; top: 4px; right: -5px;'} DOWNLOAD PDF
       %br
       %br
       %br
-      %div.form_field{style: 'float: left;'}
-        %span.label_for_order_form Address 1
-        %br
-        %input.form_style{:name => "address1", :type => "text"}
-      %div.form_field{style: 'float: left; margin-left: 15px;'}
-        %span.label_for_order_form Phone No
-        %br
-        %input.form_style{:name => "phone", :type => "text"}
+      %a#dialog-link.ui-corner-all{:href => ""}
+        %img{:src => "img/video_icon.jpg", style:'width: 40px; float: left; position: relative; top: 4px;'}
+        %h3.signin-header{style: 'float: left; position: relative; right: -10px; top: 0px; text-decoration: underline; font-size: 13px;'} WATCH ONLINE GUIDE
+      #dialog{title: "Watch WPB Online Guide"}
+        %iframe#video{:allowfullscreen => "", :frameborder => "0", :height => "315", :width => "600", style:'position: relative; right: 20px;'}
       %br
-      %br
-      %br
-      %div.form_field
-        %span.label_for_order_form Address 2
-        %br
-        %input.form_style{:name => "address2", :type => "text"}
-      %br
-      %div.form_field
-        %span.label_for_order_form City
-        %br
-        %input.form_style{:name => "city", :type => "text"}
-        %select.order_form{name: 'state', style: 'margin-left: 15px;'}
-          %option{:selected => "selected", :value => ""} Select a State
-          %option{:value => "AL"} Alabama
-          %option{:value => "AK"} Alaska
-          %option{:value => "AZ"} Arizona
-          %option{:value => "AR"} Arkansas
-          %option{:value => "CA"} California
-          %option{:value => "CO"} Colorado
-          %option{:value => "CT"} Connecticut
-          %option{:value => "DE"} Delaware
-          %option{:value => "DC"} District Of Columbia
-          %option{:value => "FL"} Florida
-          %option{:value => "GA"} Georgia
-          %option{:value => "HI"} Hawaii
-          %option{:value => "ID"} Idaho
-          %option{:value => "IL"} Illinois
-          %option{:value => "IN"} Indiana
-          %option{:value => "IA"} Iowa
-          %option{:value => "KS"} Kansas
-          %option{:value => "KY"} Kentucky
-          %option{:value => "LA"} Louisiana
-          %option{:value => "ME"} Maine
-          %option{:value => "MD"} Maryland
-          %option{:value => "MA"} Massachusetts
-          %option{:value => "MI"} Michigan
-          %option{:value => "MN"} Minnesota
-          %option{:value => "MS"} Mississippi
-          %option{:value => "MO"} Missouri
-          %option{:value => "MT"} Montana
-          %option{:value => "NE"} Nebraska
-          %option{:value => "NV"} Nevada
-          %option{:value => "NH"} New Hampshire
-          %option{:value => "NJ"} New Jersey
-          %option{:value => "NM"} New Mexico
-          %option{:value => "NY"} New York
-          %option{:value => "NC"} North Carolina
-          %option{:value => "ND"} North Dakota
-          %option{:value => "OH"} Ohio
-          %option{:value => "OK"} Oklahoma
-          %option{:value => "OR"} Oregon
-          %option{:value => "PA"} Pennsylvania
-          %option{:value => "RI"} Rhode Island
-          %option{:value => "SC"} South Carolina
-          %option{:value => "SD"} South Dakota
-          %option{:value => "TN"} Tennessee
-          %option{:value => "TX"} Texas
-          %option{:value => "UT"} Utah
-          %option{:value => "VT"} Vermont
-          %option{:value => "VA"} Virginia
-          %option{:value => "WA"} Washington
-          %option{:value => "WV"} West Virginia
-          %option{:value => "WI"} Wisconsin
-          %option{:value => "WY"} Wyoming
-        %br
-        %br
-        %div.form_field
-          %span.label_for_order_form  Zip Code
-          %br
-          %input.form_style{:name => "zipcode", :type => "text"}
-    %br
-    %h2.order_form_header{style: 'margin-left: 14px;'} DELIVERY INFORMATION
-    %div.form_background
-      %div.form_field{style: 'float: left;'}
-        %span.label_for_order_form Company <span class="required">*</span>
-        %br
-        %input.form_style{:name => "company", :type => "text"}
-      %div.form_field{style: 'float: left; margin-left: 15px; margin-top: 3px;'}
-        %span.label_for_order_form Ship to Name
-        %br
-        %input.form_style{:name => "shiptoname", :type => "text"}
-      %br
-      %br
-      %br
-      %div.form_field{style: 'float: left;'}
-        %span.label_for_order_form Address 1
-        %br
-        %input.form_style{:name => "address1", :type => "text"}
-      %div.form_field{style: 'float: left; margin-left: 15px;'}
-        %span.label_for_order_form Phone No
-        %br
-        %input.form_style{:name => "phone", :type => "text"}
-      %br
-      %br
-      %br
-      %div.form_field
-        %span.label_for_order_form Address 2
-        %br
-        %input.form_style{:name => "address2", :type => "text"}
-      %br
-      %div.form_field
-        %span.label_for_order_form City
-        %br
-        %input.form_style{:name => "city", :type => "text"}
-        %select.order_form{name: 'state', style: 'margin-left: 15px;'}
-          %option{:selected => "selected", :value => ""} Select a State
-          %option{:value => "AL"} Alabama
-          %option{:value => "AK"} Alaska
-          %option{:value => "AZ"} Arizona
-          %option{:value => "AR"} Arkansas
-          %option{:value => "CA"} California
-          %option{:value => "CO"} Colorado
-          %option{:value => "CT"} Connecticut
-          %option{:value => "DE"} Delaware
-          %option{:value => "DC"} District Of Columbia
-          %option{:value => "FL"} Florida
-          %option{:value => "GA"} Georgia
-          %option{:value => "HI"} Hawaii
-          %option{:value => "ID"} Idaho
-          %option{:value => "IL"} Illinois
-          %option{:value => "IN"} Indiana
-          %option{:value => "IA"} Iowa
-          %option{:value => "KS"} Kansas
-          %option{:value => "KY"} Kentucky
-          %option{:value => "LA"} Louisiana
-          %option{:value => "ME"} Maine
-          %option{:value => "MD"} Maryland
-          %option{:value => "MA"} Massachusetts
-          %option{:value => "MI"} Michigan
-          %option{:value => "MN"} Minnesota
-          %option{:value => "MS"} Mississippi
-          %option{:value => "MO"} Missouri
-          %option{:value => "MT"} Montana
-          %option{:value => "NE"} Nebraska
-          %option{:value => "NV"} Nevada
-          %option{:value => "NH"} New Hampshire
-          %option{:value => "NJ"} New Jersey
-          %option{:value => "NM"} New Mexico
-          %option{:value => "NY"} New York
-          %option{:value => "NC"} North Carolina
-          %option{:value => "ND"} North Dakota
-          %option{:value => "OH"} Ohio
-          %option{:value => "OK"} Oklahoma
-          %option{:value => "OR"} Oregon
-          %option{:value => "PA"} Pennsylvania
-          %option{:value => "RI"} Rhode Island
-          %option{:value => "SC"} South Carolina
-          %option{:value => "SD"} South Dakota
-          %option{:value => "TN"} Tennessee
-          %option{:value => "TX"} Texas
-          %option{:value => "UT"} Utah
-          %option{:value => "VT"} Vermont
-          %option{:value => "VA"} Virginia
-          %option{:value => "WA"} Washington
-          %option{:value => "WV"} West Virginia
-          %option{:value => "WI"} Wisconsin
-          %option{:value => "WY"} Wyoming
-        %br
-        %br
-        %div.form_field
-          %span.label_for_order_form  Zip Code
-          %br
-          %input.form_style{:name => "zipcode", :type => "text"}
-    %br
-    %h2.order_form_header{style: 'margin-left: 14px;'} JOB INFORMATION
-    %div.form_background
-      %span.label_for_order_form Keep Job On File? <span class="required">*</span>
-      %br
-        %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'yes' } Yes
-        %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'no', style: 'margin-left: 5px;' } No
-        %div.form_field{style: 'float: right; margin-left: 15px;'}
-          %span.label_for_order_form Project Title <span class="required">*</span>
-          %input.form_style{:name => "projecttitle", :type => "text"}
-        %br
-        %br
-        %span.label_for_order_form Delivery <span class="required">*</span>
-        %br
-        %select.order_form
-          %option{:value => "willcall"} Will Call
-          %option{:value => "fileonly"} File Only
-          %option{:value => "delivery"} Delivery (Local Only)
-          %option{:value => "upsground"} UPS Ground
-          %option{:value => "upssecondday"} UPS Second Day
-          %option{:value => "upsovernight"} UPS Overnight
-        %div.form_field{style: 'float: right; margin-left: 15px;'}
-          %span.label_for_order_form P.O. No
-          %input.form_style{:name => "pono", :type => "text"}
-        %br
-        %br
-        %span.label_for_order_form Due Date <span class="required">*</span>
-        %br
-        %input{type: "text", id: "datepicker", :name => "duedate"}
-        %div.form_field{style: 'float: right; margin-left: 15px;'}
-          %span.label_for_order_form Job I.D. No
-          %input.form_style{:name => "jobidno", :type => "text"}
-        %br
-      %span.label_for_order_form Due Time <span class="required">*</span>
-      %br
-      %input.form_style{:name => "duetime", :type => "text"}
-      %select.order_form{style: 'width: 60px;'}
-        %option{:value => "am"} AM
-        %option{:value => "pm"} PM
-    %div.form_background
-      %span.label_for_order_form Pick Up Originals? <span class="required">*</span>
-      %br
-      %input.radio_btns{:type => "radio" ,:name => "pick_up_originals", value: 'yes' } Yes
-      %input.radio_btns{:type => "radio" ,:name => "pick_up_originals", value: 'no', style: 'margin-left: 5px;' } No
-    %br
-    %button.btn_style{style: 'margin-left: 8px;'}
-      GO TO NEXT STEP
-    %br
-    %br
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  #content_right_signup_form
+    .vertical_line
+    %h3.signin-header SIGN UP
+    %p
+      Don’t have an account. Sign up for an account and you will gain the benefit of tracking your orders, seeing your order history and save your default information.
+    %button.btn_style_order_form
+      REGISTER NOW
+    %h3.signin-header DON'T WANT TO SIGN UP FOR AN ACCOUNT?
+    %p
+      No problem, click on the button below and get started with your order.
+    %button.btn_style_order_form
+      ORDER NOW
+    %h3.signin-header
+      For more information contact us
+    %p
+      Email: 
+      %a{:href => "mailto:ask@wpbinc.com", target: '_blank'}ask@wpbinc.com
+    %p
+      Phone: (423) 235-2352
 
 
 // JOB TYPE FORM
-#master
-  #content_frame
-    %br
-    %hr
-    %div.circle{style: 'float: left;'}
+%br
+%br
+%br
+%br
+%br
+#main_frame_order_form
+  %br
+  .progress-line
+  .progress-bar-container
+    .circle.float-left.active{style: 'margin: 0 !important'}
       %span.progress_number 1
-    %span.progress_description Order Form
-    %div.circle_active{style: 'float: left; margin-left: 110px;'}
+      %span.progress_description.active-font
+        Info
+    .circle.float-left
       %span.progress_number 2
-    %span.progress_description_active Add Job Type
-    %div.circle{style: 'float: left; margin-left: 120px;'}
+      %span.progress_description 
+        Add Job
+    .circle.float-left
       %span.progress_number 3
-    %span.progress_description Upload Files
-    %br
-    %br
-    %hr
-    %h2.order_form_header{style: 'margin-left: 14px;'} ADD JOB TYPE
+      %span.progress_description 
+        Upload Files
+    .circle.float-left
+      %span.progress_number 4
+      %span.progress_description 
+        Billing Delivery
+    .circle.float-left
+      %span.progress_number 5
+      %span.progress_description 
+        Review Submit
+  %br
+  %br
+  %br
+
     %form{:action => "", :autocomplete => "on"}
-      %div.form_background
-        %div.form_background_white
-          %button.job_type_button{value: 'addedForm1'}
-            %b Large Format Black & White
-          %button.job_type_button{value: 'addedForm2'}
-            %b Small Format Black & White
-          %button.job_type_button{value: 'addedForm3'}
-            %b Large Format Color
-          %button.job_type_button{style: 'margin-top: 10px;', value: 'addedForm4'}
-            %b Small Format Color
-          %button.job_type_button{value: 'addedForm5'}
-            %b Mounting & Laminating
-          %button.job_type_button{value: 'addedForm6'}
-            %b Scanning & Archiving
-      %div#jobTypeAddedForm
-      %div.jobTypeForm#addedForm1
-        %h2.order_form_header{style: 'margin-left: 14px;'} LARGE FORMAT BLACK & WHITE
-        %div.form_background
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+      %h3.signin-header.order_form_header CONTACT INFORMATION
+      .main_frame_background_order_form
+        %form{:action => "", :autocomplete => "on"}
+          .form_field.float-left
+            %span.label_for_order_form Name <span class="required">*</span>
+            %br
+            %input.form_style{:name => "name", :type => "text"}
+          .form_field_right.float-left
+            %span.label_for_order_form Phone No <span class="required">*</span>
+            %br
+            %input.form_style{:name => "phone", :type => "text"}
           %br
-          %input.form_style.input_fn{ :for => "first_name", :name => "filename", :type => "text"}
-            %br
-            %br
-            %span.label.label_for_order_form Media <span class="required">*</span>
-            %br
-            %select.order_form
-              %option{:value => "20lb100Recycled"} 20lb 100% Recycled (default)
-              %option{:value => "20lbLtBlue"} 20lb Lt. Blue
-              %option{:value => "20lbLtGreen"} 20lb Lt. Green
-              %option{:value => "20lbLtPink"} 20lb Lt. Pink
-              %option{:value => "20lbLtYellow"} 20lb Lt. Yellow
-              %option{:value => "presentationBond"} Presentation Bond
-              %option{:value => "vellum"} Vellum
-              %option{:value => "mylar"} Mylar
-              %option{:value => "SeeSpecialInstr"} See Special Instr.
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form No. of Originals
-              %br
-              %input.form_style{:name => "nooforiginals", :type => "text"}
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form No. of Copies
-              %br
-              %input.form_style{:name => "noofcopies", :type => "text"}
-            %br
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Binding <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "edge"} Edge (default)
-                %option{:value => "none"} None
-                %option{:value => "screwPost"} Screw Post
-                %option{:value => "stapling"} Stapling
-                %option{:value => "SeeSpecialInstr"} See Special Instr.
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Print Size <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "fullSize"} Full Size (default)
-                %option{:value => "halfSize"} Half Size
-                %option{:value => "customSize"} Custom Size
-            %br
-            %div.custom_size{style: 'float: right; margin-right: 200px; margin-top: 10px; display: none'}
-              %span.label_for_order_form Custom Size <span class="required">*</span>
-              %input.form_style{:name => "customsize", :type => "text", style: 'width: 70px;'}
-            %br
-            %br
-            %br
-        %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-        %br
-        %br
-      %div.jobTypeForm#addedForm2{style: 'display: none;'}
-        %h2.order_form_header{style: 'margin-left: 14px;'} SMALL FORMAT BLACK & WHITE
-        %div.form_background
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
           %br
-          %input.form_style.input_fn{ :for => "descfilename", :name => "filename", :type => "text"}
-            %br
-            %br
-            %span.label.label_for_order_form Media <span class="required">*</span>
-            %br
-            %select.order_form
-              %option{:value => "20lb100recycledwht"} 20lb 100% Recycled Wht (default)
-              %option{:value => "20lbltblue"} 20lb Lt. Blue
-              %option{:value => "20lbltgreen"} 20lb Lt. Green
-              %option{:value => "20lbltpink"} 20lb Lt. Pink
-              %option{:value => "20lbltyellow"} 20lb Lt. Yellow
-              %option{:value => "28lbwhite"} 28lb White
-              %option{:value => "cover"} Cover
-              %option{:value => "seespecialintr"} See Special Instr.
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form No. of Originals
-              %br
-              %input.form_style{:name => "nooforiginals", :type => "text"}
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form No. of Copies
-              %br
-              %input.form_style{:name => "noofcopies", :type => "text"}
-            %br
-            %br
-        %div.form_background
-          %span.label_for_order_form Print Color in B&W? <span class="required">*</span>
           %br
-          %input.radio_btns{:type => "radio" ,:name => "print_in_bw", value: 'yes' } Yes
-          %input.radio_btns{:type => "radio" ,:name => "print_in_bw", value: 'no', style: 'margin-left: 5px;' } No
+          %span.label_for_order_form Email <span class="required">*</span>
           %br
-          %br        
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Binding <span class="required">*</span>
-              %br
-              %select.order_form#binding_options{style: 'float: left'}
-                %option{:value => "none"} None (default)
-                %option{:value => "3holepunch"} 3 Hole Punch
-                %option{:value => "3ringbinder"} 3 Ring Binder
-                %option{:value => "comb"} Comb
-                %option{:value => "plasticcoil"} Plastic Coil 
-                %option{:value => "saddlestitch"} Saddle Stitch
-                %option{:value => "screwpost"} Screw Post
-                %option{:value => "stapling"} Stapling
-                %option{:value => "tape"} Tape
-                %option{:value => "wireo"} Wire-O 
-                %option{:value => "seespecialintr"} See Special Instr.
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Page Size <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "8.5x11"} 8.5x11 (default)
-                %option{:value => "8.5x14"} 8.5x14
-                %option{:value => "11x17"} 11x17
-                %option{:value => "customsize"} Custom Size 
-            %div.form_field.plasticCoil{style: 'margin-top: 60px; display:none;  '}
-              %span.label_for_order_form Plastics Coil Color <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "black"} Black
-                %option{:value => "white"} White
-            %div.form_field.tapeColor{style: 'margin-top: 60px; display:none  '}
-              %span.label_for_order_form Tape Color <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "black"} Black
-                %option{:value => "blue"} Blue
-                %option{:value => "green"} Green
-                %option{:value => "red"} Red
-                %option{:value => "white"} White
-                %option{:value => "yellow"} Yellow
-            %div.form_field.wireColor{style: 'margin-top: 60px; display:none  '}
-              %span.label_for_order_form Wire-O Color <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "black"} Black
-                %option{:value => "silver"} Silver
-          %br 
-          %br            
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Duplex <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "matchorig"} Match Orig. (default)
-                %option{:value => "yes"} Yes
-                %option{:value => "no"} No
-          %br      
-          %br    
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Front Cover 
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "acetate"} Acetate
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Back Cover 
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "acetate"} Acetate
-            %br
-            %br
-        %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-        %br
-        %br
-      %div.jobTypeForm#addedForm3{style: 'display: none'}
-        %h2.order_form_header{style: 'margin-left: 14px;'} LARGE FORMAT COLOR
-        %div.form_background
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
-          %br
-          %input.form_style.input_fn{ :for => "descfilename", :name => "descfilename", :type => "text"}
-            %br
-            %br
-            %span.label.label_for_order_form Media <span class="required">*</span>
-            %br
-            %select.order_form
-              %option{:value => "photosatin"} Photo Satin
-              %option{:value => "photogloss"} Photo Gloss
-              %option{:value => "32photobond"} 32# Photo Bond
-              %option{:value => "20100recycled"} 20# 100% Recycled
-              %option{:value => "vinyl"} Vinyl
-              %option{:value => "outdoorbanner"} Outdoor Banner
-              %option{:value => "seespecialintr"} See Special Instr.
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form No. of Originals
-              %br
-              %input.form_style{:name => "nooforiginals", :type => "text"}
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form No. of Copies
-              %br
-              %input.form_style{:name => "noofcopies", :type => "text"}
-            %br
-            %br
-          %br        
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Scale <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "100% (default)"} 100% (default)
-                %option{:value => "50"} 50%
-                %option{:value => "bestfit"} Best Fit
-                %option{:value => "customscale"} Custom Scale 
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Print Size <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "fullsize"} Full Size (default)
-                %option{:value => "halfsize"} Half Size
-                %option{:value => "customsize"} Custom Size
-            %br
-            %br
-        %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-        %br
-        %br
-      %div.jobTypeForm#addedForm4{style: 'display: none;'}
-        %h2.order_form_header{style: 'margin-left: 14px;'} SMALL FORMAT COLOR
-        %div.form_background
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
-          %br
-          %input.form_style.input_fn{ :for => "descfilename", :name => "filename", :type => "text"}
-            %br
-            %br
+          %input.form_style{:name => "email", :type => "email", style: 'width: 350px;'}
 
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Media <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "28lbcolorbond"} 28lb Color Bond
-                %option{:value => "28lb100recycledcolorbond"} 28lb 100% Recycled Color Bond
-                %option{:value => "60lbcolorbond"} 60lb Color Bond
-                %option{:value => "80lbcolorcover"} 80lb Color Cover
-                %option{:value => "80lb100recycledcolorcover"} 80lb 100% Recycled Color Cover
-                %option{:value => "100lbcolorcoverglossy"} 100lb Color Cover Glossy
-                %option{:value => "100lbcolorcoverdull"} 100lb Color Cover Dull
-                %option{:value => "numberoforiginals"} # of Originals
-                %option{:value => "numberofcopies"} # of Copies *
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Binding <span class="required">*</span>
-              %br
-              %select.order_form#binding_options_smallformatcolor
-                %option{:value => "none"} None (default)
-                %option{:value => "3holepunch"} 3 Hole Punch
-                %option{:value => "3ringbinder"} 3 Ring Binder
-                %option{:value => "comb"} Comb
-                %option{:value => "plasticcoil"} Plastic Coil 
-                %option{:value => "saddlestitch"} Saddle Stitch
-                %option{:value => "screwpost"} Screw Post
-                %option{:value => "stapling"} Stapling
-                %option{:value => "tape"} Tape
-                %option{:value => "wireo"} Wire-O 
-                %option{:value => "seespecialinstr"} See Special Instr.
-            %div.form_field.tapeColorSmallFormatColor{style: 'margin-top: 60px; position: relative; right: -250px; display:none '}
-              %span.label_for_order_form Tape Color <span class="required">*</span>
-              %br
-              %select.order_form
-                %option{:value => "black"} Black
-                %option{:value => "blue"} Blue
-                %option{:value => "green"} Green
-                %option{:value => "red"} Red
-                %option{:value => "white"} White
-                %option{:value => "yellow"} Yellow
-            %div.form_field.wireColorSmallFormatColor{style: 'margin-top: 60px; position: relative; right: -250px; display:none'}
-              %span.label_for_order_form Wire-O Color <span class="required">*</span>
-              %br
-              %select.order_form
-                %option{:value => "black"} Black
-                %option{:value => "silver"} Silver
-            %div.form_field.plasticCoilSmallFormatColor{style: 'margin-top: 60px; position: relative; right: -250px; display:none '}
-              %span.label_for_order_form Plastics Coil Color <span class="required">*</span>
-              %br
-              %select.order_form
-                %option{:value => "black"} Black
-                %option{:value => "white"} White
-            %br
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Page Size <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "8.5x11"} 8.5x11 (default)
-                %option{:value => "8.5x11withbleed"} 8.5x11 with bleed
-                %option{:value => "11x17"} 11x17
-                %option{:value => "11x17withbleed"} 11x17 with bleed
-                %option{:value => "12x18"} 12x18
-                %option{:value => "customsize"} Custom Size
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Duplex <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "matchorig"} Match Orig. (default)
-                %option{:value => "yes"} Yes
-                %option{:value => "no"} No
-          %br   
-          %br      
-          %br    
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Front Cover 
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "acetate"} Acetate
-                %option{:value => "blackvinyl"} Black Vinyl
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Back Cover 
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "acetate"} Acetate
-                %option{:value => "blackvinyl"} Black Vinyl
-            %br
-            %br
-        %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-        %br
-        %br
-      %div.jobTypeForm#addedForm5{style: 'display: none'}
-        %h2.order_form_header{style: 'margin-left: 14px;'} MOUNTING & LAMINATING
-        %div.form_background
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+      %h3.signin-header.order_form_header JOB INFORMATION
+      .main_frame_background_order_form
+        .form_field.float-left
+          %span.label_for_order_form Project Title <span class="required">*</span>
           %br
-          %input.form_style.input_fn{ :for => "descfilename", :name => "descfilename", :type => "text"}
-            %br
-            %br
-
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Mounting Media <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "316FoamcoreWhite"} 3/16" Foamcore - White
-                %option{:value => "316FoamcoreBlack"} 3/16" Foamcore - Black
-                %option{:value => "316GatorboardWhite"} 3/16" Gatorboard - White
-                %option{:value => "316GatorboardBlack"} 3/16" Gatorboard - Black
-                %option{:value => "12GatorboardBlack"} 1/2" Gatorboard - Black
-                %option{:value => "12GatorboardWhite"} 1/2" Gatorboard - White
-                %option{:value => "3mm100RecyclableEnviroboardWhite"} 3mm 100% Recyclable Enviroboard - White
-                %option{:value => "6mm100RecyclableEnviroboardWhite"} 6mm 100% Recyclable Enviroboard - White
-                %option{:value => "316100%RecyclableEnviroboardCraft"} 3/16" 100% Recyclable Enviroboard - Craft
-                %option{:value => "4mmPVCFluteWhite"} 4mm PVC Flute - White
-                %option{:value => "3mmSintraWhite"} 3mm Sintra - White
-                %option{:value => "3mmSintraBlack"} 3mm Sintra - Black
-                %option{:value => "4milStyreneWhite"} 4mil Styrene - White
-                %option{:value => "PosterBoardWhite"} Poster Board - White
-                %option{:value => "MuseumBoardBlack"} Museum Board - Black
-                %option{:value => "SeeSpecialInstructions"} See Special Instructions
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form Front Lamination <span class="required">*</span>
-              %br
-              %select.order_form#print_size_options
-                %option{:value => "3milGloss"} 3mil Gloss
-                %option{:value => "3milMatte"} 3mil Matte
-                %option{:value => "5milGloss"} 5mil Gloss
-                %option{:value => "10milGloss"} 10mil Gloss
-                %option{:value => "DryErase"} Dry Erase
-            %br
-            %br
-            %br
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form Back Lamination  <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "3milGloss"} 3mil Gloss
-                %option{:value => "3milMatte"} 3mil Matte
-                %option{:value => "5milGloss"} 5mil Gloss
-                %option{:value => "10milGloss"} 10mil Gloss
-                %option{:value => "DryErase"} Dry Erase
-            %br
-            %br
-            %br
-        %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-        %br
-        %br
-      %div.jobTypeForm#addedForm6{style: 'display: none'}
-        %h2.order_form_header{style: 'margin-left: 14px;'} SCANNING & ARCHIVING
-        %div.form_background{style: 'height: 160px;'}
-          %button.closeBtn
-            remove
-          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %input.form_style{:name => "project_title", :type => "text"}
+        .form_field_right.float-left
+          %span.label_for_order_form Purchase Order Number
           %br
-          %input.form_style.input_fn{ :for => "descfilename", :name => "descfilename", :type => "text"}
-            %br
-            %br
-
-            %div.form_field{style: 'float: left;'}
-              %span.label_for_order_form File Type <span class="required">*</span>
-              %br
-              %select.order_form{style: 'float: left'}
-                %option{:value => "BlackWhitePDF"} Black & White PDF
-                %option{:value => "ColorPDF"} Color PDF
-                %option{:value => "BlackWhiteTIFF"} Black & White TIFF
-                %option{:value => "ColorTIFF"} Color TIFF
-            %div.form_field{style: 'float: left; margin-left: 78px;'}
-              %span.label_for_order_form File Delivery <span class="required">*</span>
-              %br
-              %select.order_form#fileDelivery
-                %option{:value => "burncddvdrom"} Burn CD/DVD ROM
-                %option{:value => "viaftp"} Via FTP
-            %div.form_field.emailFTP{style: 'margin-top: 60px; margin-left: 250px; margin-bottom:20px; display: none;  '}
-              %span.label_for_order_form Email
-              %br
-              %input.form_style{:name => "nooforiginals", :type => "email"}
+          %input.form_style{:name => "purchase_order_number", :type => "text"}
+        .form_field_right.float-left
+          %span.label_for_order_form Job Identification Number
+          %br
+          %input.form_style{:name => "purchase_order_number", :type => "text"}
         %br
-        %div#jobtype 
-        %button#btnAdd{style: 'float: left; margin-left: 8px;'}
-          + Duplicate Entry
-      %br
-      %button.btn_style{style: 'margin-left: 8px;'}
+        %br
+        %br
+        .form_field.float-left
+          %span.label_for_order_form Keep Job On File? <span class="required">*</span>
+          %br
+            %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'yes' } Yes
+            %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'no', style: 'margin-left: 15px;' } No
+        .form_field_right.float-left
+          %span.label_for_order_form Pick Up Originals? <span class="required">*</span>
+          %br
+            %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'yes' } Yes
+            %input.radio_btns{:type => "radio" ,:name => "keep_job_on_file", value: 'no', style: 'margin-left: 15px;' } No    
+        %br
+        %br
+        %br   
+          %span.label_for_order_form Due Date &#38; Time <span class="required">*</span>
+          %br
+          %select.order_form{style: 'width: 115px;'}
+            %option{:value => "January"} January
+            %option{:value => "Feburary"} Feburary
+            %option{:value => "March"} March
+            %option{:value => "April"} April
+            %option{:value => "May"} May
+            %option{:value => "June"} June
+            %option{:value => "July"} July
+            %option{:value => "August"} August
+            %option{:value => "September"} September
+            %option{:value => "October"} October
+            %option{:value => "November"} November
+            %option{:value => "December"} December
+          %select.order_form{style: 'width: 55px;'}
+            %option{:value => ""} 1
+            %option{:value => ""} 2
+            %option{:value => ""} 3
+            %option{:value => ""} 4
+            %option{:value => ""} 5
+            %option{:value => ""} 6
+            %option{:value => ""} 7
+            %option{:value => ""} 8
+            %option{:value => ""} 9
+            %option{:value => ""} 10
+            %option{:value => ""} 11
+            %option{:value => ""} 12
+            %option{:value => ""} 13
+            %option{:value => ""} 14
+            %option{:value => ""} 15
+            %option{:value => ""} 16
+            %option{:value => ""} 17
+            %option{:value => ""} 18
+            %option{:value => ""} 19
+            %option{:value => ""} 20
+            %option{:value => ""} 21
+            %option{:value => ""} 22
+            %option{:value => ""} 23
+            %option{:value => ""} 24
+            %option{:value => ""} 25
+            %option{:value => ""} 26
+            %option{:value => ""} 27
+            %option{:value => ""} 28
+            %option{:value => ""} 29
+            %option{:value => ""} 30
+            %option{:value => ""} 31
+          %select.order_form{style: 'width: 70px;'} 
+            %option{:value => ""} 2013
+            %option{:value => ""} 2014
+            %option{:value => ""} 2015
+            %option{:value => ""} 2016
+            %option{:value => ""} 2017
+            %option{:value => ""} 2018
+            %option{:value => ""} 2019
+            %option{:value => ""} 2020 
+          %span{style:'position: relative; top: 5px; margin: 0 5px 0 5px;'}
+            &#175;&#175;
+          %select.order_form{style: 'width: 55px;'}
+            %option{:value => ""} 1
+            %option{:value => ""} 2
+            %option{:value => ""} 3
+            %option{:value => ""} 4
+            %option{:value => ""} 5
+            %option{:value => ""} 6
+            %option{:value => ""} 7
+            %option{:value => ""} 8
+            %option{:value => ""} 9
+            %option{:value => ""} 10
+            %option{:value => ""} 11
+            %option{:value => ""} 12
+          %select.order_form{style: 'width:55px;'}
+            %option{:value => ""} 00
+            %option{:value => ""} 15
+            %option{:value => ""} 30
+            %option{:value => ""} 45
+          %select.order_form{style: 'width: 60px;'}
+            %option{:value => "am"} AM
+            %option{:value => "pm"} PM
+      %button.btn_style_order_form{style: 'position: relative; right: -6px; top: 15px;'}
         GO TO NEXT STEP
       %br
       %br
@@ -828,61 +225,829 @@ title: WPB Order Form
 
 
 
-
-
-
-
-
-
-
-
-
-
-//UPLOAD FILES FORM
-#master
-  #content_frame
-    %hr
-    %div.circle{style: 'float: left;'}
+%br
+%br
+%br
+%br
+%br
+#main_frame_order_form
+  %br
+  .progress-line
+  .progress-bar-container
+    .circle.float-left{style: 'margin: 0 !important'}
       %span.progress_number 1
-    %span.progress_description Order Form
-    %div.circle{style: 'float: left; margin-left: 110px;'}
+      %span.progress_description
+        Info
+    .circle.float-left.active
       %span.progress_number 2
-    %span.progress_description Add Job Type
-    %div.circle_active{style: 'float: left; margin-left: 120px;'}
+      %span.progress_description.active-font 
+        Add Job
+    .circle.float-left
       %span.progress_number 3
-    %span.progress_description_active Upload Files
-    %br
-    %br
-    %hr
-    %h2.order_form_header{style: 'margin-left: 14px;'} UPLOAD FILES
-    %div.form_background
-      %form{:action => "", :autocomplete => "on"}
-        %input.btn_style_v2{:type => 'button' , :value => 'choose file'}
-        %span{style:"font-size:12px;"} No file chosen
-        %br
-        %br
-        %input.btn_style_v2{:type => 'button' , :value => 'choose file'}
-        %span{style:"font-size:12px;"} No file chosen
-        %br
-        %br
-        %input.btn_style_v2{:type => 'button' , :value => 'choose file'}
-        %span{style:"font-size:12px;"} No file chosen
-        %br
-        %br
-        %input.btn_style_v2{:type => 'button' , :value => 'choose file'}
-        %span{style:"font-size:12px;"} No file chosen
-        %br
-        %br
-        = link_to 'upload additional file'
-        %br
-        %br
-        Special Instructions:
-        %br
-        %textarea{:cols => "55", :maxlength => "1000", :name => "comments", :rows => "10"}
-        %br
-        %br
-        %button.btn_style
-          SUBMIT JOB
-        %br
-        %br
+      %span.progress_description 
+        Upload Files
+    .circle.float-left
+      %span.progress_number 4
+      %span.progress_description 
+        Billing Delivery
+    .circle.float-left
+      %span.progress_number 5
+      %span.progress_description 
+        Review Submit
+  %br
+  %br
+  %br
 
+    %form{:action => "", :autocomplete => "on"}
+      %h3.signin-header.order_form_header SERVICES
+      .main_frame_background_order_form
+        %form{:action => "", :autocomplete => "on"}
+          %div.form_background_white
+            %button.job_type_button.addLargeFormatBlackWhite{value: 'addedForm1'}
+              %b Large Format Black &#38; White
+            %button.job_type_button{value: 'addedForm2'}
+              %b Small Format Black &#38; White
+            %button.job_type_button{value: 'addedForm3'}
+              %b Large Format Color
+            %button.job_type_button{style: 'margin-top: 10px;', value: 'addedForm4'}
+              %b Small Format Color
+            %button.job_type_button{value: 'addedForm5'}
+              %b Mounting &#38; Laminating
+            %button.job_type_button{value: 'addedForm6'}
+              %b Scanning &#38; Archiving
+
+      #added_form.addedForm1
+        %h3.order_form_header.signin-header Large Format Black &#38; White
+        .main_frame_background_order_form
+          %button.closeBtn
+            remove
+          %button.add-entry.addSmallFormatBlackWhite
+            &#43; additional entry
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{name: 'lrgFormatBnW[][description-filename]', :type => "text", style: 'width: 350px'}
+            %br
+            %br
+          .form_field.float-left
+            %span.label.label_for_order_form Media <span class="required">*</span>
+            %br
+            %select.order_form
+              %option{:value => "20lb100Recycled", name: 'lrgFormatBnW[][20lb100Recycled]'} 20lb 100% Recycled
+              %option{:value => "20lbLtBlue", name: 'lrgFormatBnW[][20lbLtBlue]'} 20lb Lt. Blue
+              %option{:value => "20lbLtGreen", name: 'lrgFormatBnW[][20lbLtGreen]'} 20lb Lt. Green
+              %option{:value => "20lbLtPink", name: 'lrgFormatBnW[][20lbLtPink]'} 20lb Lt. Pink
+              %option{:value => "20lbLtYellow", name: 'lrgFormatBnW[][20lbLtYellow]'} 20lb Lt. Yellow
+              %option{:value => "presentationBond", name: 'lrgFormatBnW[][presentationBond]'} Presentation Bond
+              %option{:value => "vellum", name: 'lrgFormatBnW[][vellum]'} Vellum
+              %option{:value => "mylar", name: 'lrgFormatBnW[][mylar]'} Mylar
+              %option{:value => "SeeSpecialInstr", name: 'lrgFormatBnW[][SeeSpecialInstr]'} See Special Instr.
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Originals
+            %br
+            %input.form_style{name: 'lrgFormatBnW[][no-of-originals]', :type => "text"}
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Copies <span class="required">*</span>
+            %br 
+            %input.form_style{name: 'lrgFormatBnW[][no-of-copies]', :type => "text"}
+            %br
+            %br
+          .form_field.float-left
+            %span.label_for_order_form Binding <span class="required">*</span>
+            %br
+            %select.order_form.float-left
+              %option{:value => "edge", name: 'lrgFormatBnW[][edge]'} Edge
+              %option{:value => "none", name: 'lrgFormatBnW[][none]'} None
+              %option{:value => "screwPost", name: 'lrgFormatBnW[][screwPost]'} Screw Post
+              %option{:value => "stapling", name: 'lrgFormatBnW[][stapling]'} Stapling
+              %option{:value => "SeeSpecialInstr", name: 'lrgFormatBnW[][SeeSpecialInstr]'} See Special Instr.
+          .form_field_right.float-left
+            %span.label_for_order_form Print Size <span class="required">*</span>
+            %br
+            %select.order_form.print_size_options
+              %option{:value => "fullSize", name: 'lrgFormatBnW[][fullSize]'} Full Size
+              %option{:value => "halfSize", name: 'lrgFormatBnW[][halfSize]'} Half Size
+              %option{:value => "customSize", name: 'lrgFormatBnW[][customSize]'} Custom Size
+            .custom_size.float-right{style: 'margin-left: 15px; position: relative; top: -40px; display: none;'}
+              %span.label_for_order_form Custom Size <span class="required">*</span>
+              %br
+              %input.form_style{name: 'lrgFormatBnW[][custom-size]', :type => "text", style: 'width: 165px;'}
+
+
+
+      .jobTypeForm.addedForm2{style: 'position: relative; top: 0;'}
+        %h3.order_form_header.signin-header Small Format Black &#38; White
+        .main_frame_background_order_form
+          %button.closeBtn
+            remove
+          %button.add-entry.addSmallFormatBlackWhite
+            &#43; additional entry
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{ :for => "descfilename", name: 'smallFormatBnW[][description-filename]', :type => "text", style: 'width: 350px;'}
+            %br
+            %br
+          .form_field.float-left
+            %span.label.label_for_order_form Media <span class="required">*</span>
+            %br
+            %select.order_form{style: 'width: 200px;'}
+              %option{:value => "20lb100recycledwht", name: 'smallFormatBnW[][20lb100recycledwht]'} 20lb 100% Recycled Wht
+              %option{:value => "20lbltblue", name: 'smallFormatBnW[][20lbltblue]'} 20lb Lt. Blue
+              %option{:value => "20lbltgreen", name: 'smallFormatBnW[][20lbltgreen]'} 20lb Lt. Green
+              %option{:value => "20lbltpink", name: 'smallFormatBnW[][20lbltpink]'} 20lb Lt. Pink
+              %option{:value => "20lbltyellow", name: 'smallFormatBnW[][20lbltyellow]'} 20lb Lt. Yellow
+              %option{:value => "28lbwhite", name: 'smallFormatBnW[][20lbltwhite]'} 28lb White
+              %option{:value => "cover", name: 'smallFormatBnW[][cover]'} Cover
+              %option{:value => "seespecialintr", name: 'smallFormatBnW[][seespecialintr]'} See Special Instr.
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Originals
+            %br
+            %input.form_style{name: 'smallFormatBnW[][no-of-originals]', :type => "text"}
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Copies <span class="required">*</span>
+            %br
+            %input.form_style{name: 'smallFormatBnW[][no-of-copies]', :type => "text"}
+          %br
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form Print Color in B&#38;W? <span class="required">*</span>
+            %br
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-in-bw-yes]', value: 'yes' } Yes
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-in-bw-no]', value: 'no', style: 'margin-left: 5px;' } No
+            %br
+            %br  
+          .form_field_right.float-left
+            %span.label_for_order_form Print <span class="required">*</span>
+            %br
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-single-sided]', value: 'singleSided' } Single Sided
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-double-sided]', style: 'margin-left: 5px;' } Double Sided  
+          %br
+          %br
+          %br  
+          .form_field.float-left
+            %span.label_for_order_form Binding <span class="required">*</span>
+            %br
+            %select.order_form.binding_options.float-left
+              %option{:value => "none", name: 'smallFormatBnW[][none]'} None
+              %option{:value => "3holepunch", name: 'smallFormatBnW[][3holepunch]'} 3 Hole Punch
+              %option{:value => "3ringbinder", name: 'smallFormatBnW[][3ringbinder]'} 3 Ring Binder
+              %option{:value => "comb", name: 'smallFormatBnW[][comb]'} Comb
+              %option{:value => "plasticCoil", name: 'smallFormatBnW[][plasticcoil]'} Plastic Coil 
+              %option{:value => "saddlestitch", name: 'smallFormatBnW[][saddlestitch]'} Saddle Stitch
+              %option{:value => "screwpost", name: 'smallFormatBnW[][20lbltblue]'} Screw Post
+              %option{:value => "stapling"} Stapling
+              %option{:value => "tape"} Tape
+              %option{:value => "wireo"} Wire-O 
+              %option{:value => "seespecialintr"} See Special Instr.
+            .form_field_right.plasticCoil.float-left{style: 'position: absolute; right: 370px; top: 209px;'}
+              %span.label_for_order_form Plastics Coil Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "white"} White
+            .form_field_right.tapeColor.float-left{style: 'position: absolute; right: 410px; top: 209px;'}
+              %span.label_for_order_form Tape Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "blue"} Blue
+                %option{:value => "green"} Green
+                %option{:value => "red"} Red
+                %option{:value => "white"} White
+                %option{:value => "yellow"} Yellow
+            .form_field_right.wireColor.float-left{style: 'position: absolute; right: 400px; top: 209px;'}
+              %span.label_for_order_form Wire-O Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "silver"} Silver
+          %br
+          %br
+          %br
+          .form_field{style: 'width: 640px;'}
+            %span.label_for_order_form Page Size <span class="required">*</span>
+            %br
+            %select.order_form.print_size_options.float-left
+              %option{:value => "8.5x11"} 8.5x11
+              %option{:value => "8.5x14"} 8.5x14
+              %option{:value => "11x17"} 11x17
+              %option{:value => "customSize"} Custom Size 
+            .float-left.custom_size{style: 'margin-left: 15px; position: relative; top: -18px; display: none;'}
+              %span.label_for_order_form Custom Size <span class="required">*</span>
+              %br
+              %input.form_style{:name => "customsize", :type => "text", style: 'width: 160px;'}  
+          %br
+          %br
+          %br   
+          .form_field.float-left{style: 'position: relative; top: -20px;'}
+            %span.label_for_order_form Front Cover 
+            %br
+            %select.order_form.float-left
+              %option{:value => "acetate"} Acetate
+              %option{:value => "none"} None
+          .form_field.float-left{style: 'position: relative; top: -20px; right: -15px;'}
+            %span.label_for_order_form Back Cover 
+            %br
+            %select.order_form.print_size_options
+              %option{:value => "acetate"} Acetate
+              %option{:value => "none"} None
+
+  
+      .jobTypeForm.addedForm3{style: ''}
+        %h3.order_form_header.signin-header Large Format Color
+        .main_frame_background_order_form
+          %button.closeBtn
+            remove
+          %button.add-entry.addLargeFormatBlackWhite
+            &#43; additional entry
+
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{name: 'lrgFormatBnW[][description-filename]', :type => "text", style: 'width: 350px'}
+            %br
+            %br
+          .form_field.float-left
+            %span.label.label_for_order_form Media <span class="required">*</span>
+            %br
+            %select.order_form
+              %option{:value => "20lb100Recycled", name: 'lrgFormatBnW[][20lb100Recycled]'} 20lb 100% Recycled
+              %option{:value => "20lbLtBlue", name: 'lrgFormatBnW[][20lbLtBlue]'} 20lb Lt. Blue
+              %option{:value => "20lbLtGreen", name: 'lrgFormatBnW[][20lbLtGreen]'} 20lb Lt. Green
+              %option{:value => "20lbLtPink", name: 'lrgFormatBnW[][20lbLtPink]'} 20lb Lt. Pink
+              %option{:value => "20lbLtYellow", name: 'lrgFormatBnW[][20lbLtYellow]'} 20lb Lt. Yellow
+              %option{:value => "presentationBond", name: 'lrgFormatBnW[][presentationBond]'} Presentation Bond
+              %option{:value => "vellum", name: 'lrgFormatBnW[][vellum]'} Vellum
+              %option{:value => "mylar", name: 'lrgFormatBnW[][mylar]'} Mylar
+              %option{:value => "SeeSpecialInstr", name: 'lrgFormatBnW[][SeeSpecialInstr]'} See Special Instr.
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Originals
+            %br
+            %input.form_style{name: 'lrgFormatBnW[][no-of-originals]', :type => "text"}
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Copies <span class="required">*</span>
+            %br 
+            %input.form_style{name: 'lrgFormatBnW[][no-of-copies]', :type => "text"}
+            %br
+            %br
+          .form_field.float-left
+            %span.label_for_order_form Binding <span class="required">*</span>
+            %br
+            %select.order_form.float-left
+              %option{:value => "edge", name: 'lrgFormatBnW[][edge]'} Edge
+              %option{:value => "none", name: 'lrgFormatBnW[][none]'} None
+              %option{:value => "screwPost", name: 'lrgFormatBnW[][screwPost]'} Screw Post
+              %option{:value => "stapling", name: 'lrgFormatBnW[][stapling]'} Stapling
+              %option{:value => "SeeSpecialInstr", name: 'lrgFormatBnW[][SeeSpecialInstr]'} See Special Instr.
+          .form_field_right.float-left
+            %span.label_for_order_form Print Size <span class="required">*</span>
+            %br
+            %select.order_form.print_size_options
+              %option{:value => "fullSize", name: 'lrgFormatBnW[][fullSize]'} Full Size
+              %option{:value => "halfSize", name: 'lrgFormatBnW[][halfSize]'} Half Size
+              %option{:value => "customSize", name: 'lrgFormatBnW[][customSize]'} Custom Size
+            .custom_size.float-right{style: 'margin-left: 15px; position: relative; top: -40px; display: none;'}
+              %span.label_for_order_form Custom Size <span class="required">*</span>
+              %br
+              %input.form_style{name: 'lrgFormatBnW[][custom-size]', :type => "text", style: 'width: 165px;'}
+
+
+      .jobTypeForm.addedForm4{style: 'position: relative; top: 0;'}
+        %h3.order_form_header.signin-header Small Format Color
+        .main_frame_background_order_form
+          %button.closeBtn
+            remove
+          %button.add-entry.addSmallFormatBlackWhite
+            &#43; additional entry
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{ :for => "descfilename", name: 'smallFormatBnW[][description-filename]', :type => "text", style: 'width: 350px;'}
+            %br
+            %br
+          .form_field.float-left
+            %span.label.label_for_order_form Media <span class="required">*</span>
+            %br
+            %select.order_form{style: 'width: 200px;'}
+              %option{:value => "28lbColorBond", name: 'smallFormatBnW[][28lbColorBond]'} 28lb Color Bond
+              %option{:value => "28lb100RecycledColorBond", name: 'smallFormatBnW[][28lb100RecycledColorBond]'} 28lb 100% Recycled Color Bond
+              %option{:value => "60lbColorBond", name: 'smallFormatBnW[][60lbColorBond]'} 60lb Color Bond
+              %option{:value => "80lbColorCover", name: 'smallFormatBnW[][80lbColorCover]'} 80lb Color Cover
+              %option{:value => "80lb100RecycledColorCover", name: 'smallFormatBnW[][80lb100RecycledColorCover]'} 80lb 100% Recycled Color Cover
+              %option{:value => "100lbColorCoverGlossy", name: 'smallFormatBnW[][100lbColorCoverGlossy]'} 100lb Color Cover Glossy
+              %option{:value => "100lbColorCoverDull", name: 'smallFormatBnW[][100lbColorCoverDull]'} 100lb Color Cover Dull
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Originals
+            %br
+            %input.form_style{name: 'smallFormatBnW[][no-of-originals]', :type => "text"}
+          .form_field_right.float-left
+            %span.label_for_order_form No. of Copies <span class="required">*</span>
+            %br
+            %input.form_style{name: 'smallFormatBnW[][no-of-copies]', :type => "text"}
+          %br
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form Print Color in B&#38;W? <span class="required">*</span>
+            %br
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-in-bw-yes]', value: 'yes' } Yes
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-in-bw-no]', value: 'no', style: 'margin-left: 5px;' } No
+            %br
+            %br  
+          .form_field_right.float-left
+            %span.label_for_order_form Print <span class="required">*</span>
+            %br
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-single-sided]', value: 'singleSided' } Single Sided
+            %input.radio_btns{:type => "radio" , name: 'smallFormatBnW[][print-double-sided]', style: 'margin-left: 5px;' } Double Sided  
+          %br
+          %br
+          %br  
+          .form_field.float-left
+            %span.label_for_order_form Binding <span class="required">*</span>
+            %br
+            %select.order_form.binding_options.float-left
+              %option{:value => "none", name: 'smallFormatBnW[][none]'} None
+              %option{:value => "3holepunch", name: 'smallFormatBnW[][3holepunch]'} 3 Hole Punch
+              %option{:value => "3ringbinder", name: 'smallFormatBnW[][3ringbinder]'} 3 Ring Binder
+              %option{:value => "comb", name: 'smallFormatBnW[][comb]'} Comb
+              %option{:value => "plasticCoil", name: 'smallFormatBnW[][plasticcoil]'} Plastic Coil 
+              %option{:value => "saddlestitch", name: 'smallFormatBnW[][saddlestitch]'} Saddle Stitch
+              %option{:value => "screwpost", name: 'smallFormatBnW[][20lbltblue]'} Screw Post
+              %option{:value => "stapling"} Stapling
+              %option{:value => "tape"} Tape
+              %option{:value => "wireo"} Wire-O 
+              %option{:value => "seespecialintr"} See Special Instr.
+            .form_field_right.plasticCoil.float-left{style: 'position: absolute; right: 370px; top: 209px;'}
+              %span.label_for_order_form Plastics Coil Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "white"} White
+            .form_field_right.tapeColor.float-left{style: 'position: absolute; right: 410px; top: 209px;'}
+              %span.label_for_order_form Tape Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "blue"} Blue
+                %option{:value => "green"} Green
+                %option{:value => "red"} Red
+                %option{:value => "white"} White
+                %option{:value => "yellow"} Yellow
+            .form_field_right.wireColor.float-left{style: 'position: absolute; right: 400px; top: 209px;'}
+              %span.label_for_order_form Wire-O Color <span class="required">*</span>
+              %br
+              %select.order_form.float-left
+                %option{:value => "black"} Black
+                %option{:value => "silver"} Silver
+          %br
+          %br
+          %br
+          .form_field{style: 'width: 640px;'}
+            %span.label_for_order_form Page Size <span class="required">*</span>
+            %br
+            %select.order_form.print_size_options.float-left
+              %option{:value => "8.5x11"} 8.5x11
+              %option{:value => "8.5x14"} 8.5x14
+              %option{:value => "11x17"} 11x17
+              %option{:value => "customSize"} Custom Size 
+            .float-left.custom_size{style: 'margin-left: 15px; position: relative; top: -18px; display: none;'}
+              %span.label_for_order_form Custom Size <span class="required">*</span>
+              %br
+              %input.form_style{:name => "customsize", :type => "text", style: 'width: 160px;'}  
+          %br
+          %br
+          %br   
+          .form_field.float-left{style: 'position: relative; top: -20px;'}
+            %span.label_for_order_form Front Cover 
+            %br
+            %select.order_form.float-left
+              %option{:value => "acetate"} Acetate
+              %option{:value => "none"} None
+          .form_field.float-left{style: 'position: relative; top: -20px; right: -15px;'}
+            %span.label_for_order_form Back Cover 
+            %br
+            %select.order_form.print_size_options
+              %option{:value => "acetate"} Acetate
+              %option{:value => "none"} None
+
+
+
+      .jobTypeForm.addedForm5{style: ''}
+        %h3.order_form_header.signin-header Mounting & Laminating 
+        .main_frame_background_order_form 
+          %button.closeBtn
+            remove
+          %button.addSmallFormatBlackWhite.add-entry
+            &#43; additional entry
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{ :for => "descfilename", :name => "descfilename", :type => "text", style: 'width: 350px;'}
+            %br
+            %br
+
+          .form_field.float-left
+            %span.label_for_order_form Mounting Media <span class="required">*</span>
+            %br
+            %select.order_form.float-left
+              %option{:value => "316FoamcoreWhite"} 3/16" Foamcore - White
+              %option{:value => "316FoamcoreBlack"} 3/16" Foamcore - Black
+              %option{:value => "316GatorboardWhite"} 3/16" Gatorboard - White
+              %option{:value => "316GatorboardBlack"} 3/16" Gatorboard - Black
+              %option{:value => "12GatorboardBlack"} 1/2" Gatorboard - Black
+              %option{:value => "12GatorboardWhite"} 1/2" Gatorboard - White
+              %option{:value => "3mm100RecyclableEnviroboardWhite"} 3mm 100% Recyclable Enviroboard - White
+              %option{:value => "6mm100RecyclableEnviroboardWhite"} 6mm 100% Recyclable Enviroboard - White
+              %option{:value => "316100%RecyclableEnviroboardCraft"} 3/16" 100% Recyclable Enviroboard - Craft
+              %option{:value => "4mmPVCFluteWhite"} 4mm PVC Flute - White
+              %option{:value => "3mmSintraWhite"} 3mm Sintra - White
+              %option{:value => "3mmSintraBlack"} 3mm Sintra - Black
+              %option{:value => "4milStyreneWhite"} 4mil Styrene - White
+              %option{:value => "PosterBoardWhite"} Poster Board - White
+              %option{:value => "MuseumBoardBlack"} Museum Board - Black
+              %option{:value => "SeeSpecialInstructions"} See Special Instructions
+          .form_field_right.float-left
+            %span.label_for_order_form Front Lamination <span class="required">*</span>
+            %br
+            %select.order_form.print_size_options
+              %option{:value => "3milGloss"} 3mil Gloss
+              %option{:value => "3milMatte"} 3mil Matte
+              %option{:value => "5milGloss"} 5mil Gloss
+              %option{:value => "10milGloss"} 10mil Gloss
+              %option{:value => "DryErase"} Dry Erase
+          .form_field_right.float-left
+            %span.label_for_order_form Back Lamination  <span class="required">*</span>
+            %br
+            %select.order_form.float-left
+              %option{:value => "3milGloss"} 3mil Gloss
+              %option{:value => "3milMatte"} 3mil Matte
+              %option{:value => "5milGloss"} 5mil Gloss
+              %option{:value => "10milGloss"} 10mil Gloss
+              %option{:value => "DryErase"} Dry Erase
+
+
+      .jobTypeForm.addedForm6{style: ''}
+        %h3.order_form_header.signin-header Scanning &#38; Archiving
+        .main_frame_background_order_form
+          %button.closeBtn
+            remove
+          %button.addScanningArchiving.add-entry
+            &#43; additional entry
+          %span.label_for_order_form.label_fn Description/File Name <span class="required">*</span>
+          %br
+          %input.form_style.input_fn{ :for => "descfilename", :name => "descfilename", :type => "text"}
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form File Type <span class="required">*</span>
+            %br
+            %select.order_form.float-left
+              %option{:value => "BlackWhitePDF"} Black &#38; White PDF
+              %option{:value => "ColorPDF"} Color PDF
+              %option{:value => "BlackWhiteTIFF"} Black &#38; White TIFF
+              %option{:value => "ColorTIFF"} Color TIFF
+          .form_field_right.float-left
+            %span.label_for_order_form File Delivery <span class="required">*</span>
+            %br
+            %select.order_form.fileDelivery
+              %option{:value => "burncddvdrom"} Burn CD/DVD ROM
+              %option{:value => "viaftp"} Via FTP
+            .form_field.float-right.emailFTP{style: 'margin-left: 15px; position: relative; top: -40px; display: none;'}
+              %span.label_for_order_form Email <span class="required">*</span>
+              %br
+              %input.form_style{:name => "customsize", :type => "text", style: 'width: 165px;'}
+  %br
+  %button.btn_style_order_form{style: 'margin-left: 12px;'}
+    GO TO NEXT STEP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%br
+%br
+%br
+%br
+%br
+#main_frame_order_form
+  %br
+  .progress-line
+  .progress-bar-container
+    .circle.float-left{style: 'margin: 0 !important'}
+      %span.progress_number 1
+      %span.progress_description
+        Info
+    .circle.float-left
+      %span.progress_number 2
+      %span.progress_description 
+        Add Job
+    .circle.float-left.active
+      %span.progress_number 3
+      %span.progress_description.active-font 
+        Upload Files
+    .circle.float-left
+      %span.progress_number 4
+      %span.progress_description 
+        Billing Delivery
+    .circle.float-left
+      %span.progress_number 5
+      %span.progress_description 
+        Review Submit
+  %br
+  %br
+  %br
+    %form{:action => "", :autocomplete => "on"}
+      %h3.signin-header.order_form_header Upload Files
+      .main_frame_background_order_form{style: 'height: 300px;'}
+  %br
+  %button.btn_style_order_form{style: 'margin-left: 12px;'}
+    GO TO NEXT STEP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%br
+%br
+%br
+%br
+%br
+#main_frame_order_form
+  %br
+  .progress-line
+  .progress-bar-container
+    .circle.float-left{style: 'margin: 0 !important'}
+      %span.progress_number 1
+      %span.progress_description
+        Info
+    .circle.float-left
+      %span.progress_number 2
+      %span.progress_description 
+        Add Job
+    .circle.float-left
+      %span.progress_number 3
+      %span.progress_description 
+        Upload Files
+    .circle.float-left.active
+      %span.progress_number 4
+      %span.progress_description.active-font 
+        Billing Delivery
+    .circle.float-left
+      %span.progress_number 5
+      %span.progress_description 
+        Review Submit
+  %br
+  %br
+  %br
+    %form{:action => "", :autocomplete => "on"}
+      %h3.signin-header.order_form_header Billing
+      .main_frame_background_order_form
+        .form_field.float-left
+          %span.label_for_order_form Company <span class="required">*</span>
+          %br
+          %input.form_style{:name => "billing_info"}
+        .form_field_right.float-left
+          %span.label_for_order_form Bill To Contact Name <span class="required">*</span>
+          %br
+          %input.form_style{:name => "billing_info", :type => "text"}
+        %br
+        %br
+        %br
+        .form_field.float-left
+          %span.label_for_order_form Street Address <span class="required">*</span>
+          %br
+          %input.form_style{:name => "billing_info", :type => "text"}
+        .form_field_right.float-left
+          %span.label_for_order_form Address Line 2
+          %br
+          %input.form_style{:name => "billing_info", :type => "text"}
+        %br
+        %br
+        %br
+          .form_field{style: 'float: left;'}
+            %span.label_for_order_form City <span class="required">*</span>
+            %br
+            %input.form_style{:name => "billing_info", :type => "text"}
+          .form_field_right.float-left    
+            %span.label_for_order_form State <span class="required">*</span>
+            %br  
+            %select.order_form.float-left{:name => "billing_info"}
+              %option{:selected => "selected", :value => ""} Select a State
+              %option{:value => "AL"} Alabama
+              %option{:value => "AK"} Alaska
+              %option{:value => "AZ"} Arizona
+              %option{:value => "AR"} Arkansas
+              %option{:value => "CA"} California
+              %option{:value => "CO"} Colorado
+              %option{:value => "CT"} Connecticut
+              %option{:value => "DE"} Delaware
+              %option{:value => "DC"} District Of Columbia
+              %option{:value => "FL"} Florida
+              %option{:value => "GA"} Georgia
+              %option{:value => "HI"} Hawaii
+              %option{:value => "ID"} Idaho
+              %option{:value => "IL"} Illinois
+              %option{:value => "IN"} Indiana
+              %option{:value => "IA"} Iowa
+              %option{:value => "KS"} Kansas
+              %option{:value => "KY"} Kentucky
+              %option{:value => "LA"} Louisiana
+              %option{:value => "ME"} Maine
+              %option{:value => "MD"} Maryland
+              %option{:value => "MA"} Massachusetts
+              %option{:value => "MI"} Michigan
+              %option{:value => "MN"} Minnesota
+              %option{:value => "MS"} Mississippi
+              %option{:value => "MO"} Missouri
+              %option{:value => "MT"} Montana
+              %option{:value => "NE"} Nebraska
+              %option{:value => "NV"} Nevada
+              %option{:value => "NH"} New Hampshire
+              %option{:value => "NJ"} New Jersey
+              %option{:value => "NM"} New Mexico
+              %option{:value => "NY"} New York
+              %option{:value => "NC"} North Carolina
+              %option{:value => "ND"} North Dakota
+              %option{:value => "OH"} Ohio
+              %option{:value => "OK"} Oklahoma
+              %option{:value => "OR"} Oregon
+              %option{:value => "PA"} Pennsylvania
+              %option{:value => "RI"} Rhode Island
+              %option{:value => "SC"} South Carolina
+              %option{:value => "SD"} South Dakota
+              %option{:value => "TN"} Tennessee
+              %option{:value => "TX"} Texas
+              %option{:value => "UT"} Utah
+              %option{:value => "VT"} Vermont
+              %option{:value => "VA"} Virginia
+              %option{:value => "WA"} Washington
+              %option{:value => "WV"} West Virginia
+              %option{:value => "WI"} Wisconsin
+              %option{:value => "WY"} Wyoming
+        %br
+        %br
+        .form_field.float-left
+          %span.label_for_order_form Zip Code <span class="required">*</span>
+          %br
+          %input.form_style{:name => "billing_info", :type => "text"}
+        .form_field_right.float-left
+          %span.label_for_order_form Phone No. <span class="required">*</span>
+          %br
+          %input.form_style{:name => "billing_info", :type => "text"}
+          %br
+        %br
+        %br
+        %br
+      %h3.signin-header.order_form_header Delivery
+      .main_frame_background_order_form
+        .form_field.float-left{style: 'margin-bottom: 10px;'}
+          %input#remove{type: 'checkbox', style: 'margin-right: 2px;'} 
+            See Attached Transmittal
+        .form_field_right.float-left
+          %input#copy{type: 'checkbox', style: 'margin-right: 2px;'} 
+            Copy Billing Address
+        %br
+        %hr
+        #deliverToForm
+          %span.label_for_order_form Delivery <span class="required">*</span>
+          %br
+          %select.order_form#deliveryOptions
+            %option{:value => "willcall"} Will Call
+            %option{:value => "fileonly"} File Only
+            %option{:value => "delivery"} Delivery (Local Only)
+            %option{:value => "upsground"} UPS Ground
+            %option{:value => "upssecondday"} UPS Second Day
+            %option{:value => "upsovernight"} UPS Overnight
+          %br
+          %br          
+          .form_field.float-left
+            %span.label_for_order_form Company <span class="required">*</span>
+            %br
+            %input.form_style{:name => "shipping_info", class: 'clearForm'}
+          .form_field_right.float-left
+            %span.label_for_order_form Ship To Contact Name
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          %br
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form Street Address <span class="required_delivery">*</span>
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          .form_field_right.float-left
+            %span.label_for_order_form Address Line 2 
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          %br
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form City <span class="required_delivery">*</span>
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          .form_field_right.float-left   
+            %span.label_for_order_form State <span class="required_delivery">*</span>
+            %br  
+            %select.order_form.float-left{:name => "shipping_info", class: 'clearForm'}
+              %option{:selected => "selected", :value => ""} Select a State
+              %option{:value => "AL"} Alabama
+              %option{:value => "AK"} Alaska
+              %option{:value => "AZ"} Arizona
+              %option{:value => "AR"} Arkansas
+              %option{:value => "CA"} California
+              %option{:value => "CO"} Colorado
+              %option{:value => "CT"} Connecticut
+              %option{:value => "DE"} Delaware
+              %option{:value => "DC"} District Of Columbia
+              %option{:value => "FL"} Florida
+              %option{:value => "GA"} Georgia
+              %option{:value => "HI"} Hawaii
+              %option{:value => "ID"} Idaho
+              %option{:value => "IL"} Illinois
+              %option{:value => "IN"} Indiana
+              %option{:value => "IA"} Iowa
+              %option{:value => "KS"} Kansas
+              %option{:value => "KY"} Kentucky
+              %option{:value => "LA"} Louisiana
+              %option{:value => "ME"} Maine
+              %option{:value => "MD"} Maryland
+              %option{:value => "MA"} Massachusetts
+              %option{:value => "MI"} Michigan
+              %option{:value => "MN"} Minnesota
+              %option{:value => "MS"} Mississippi
+              %option{:value => "MO"} Missouri
+              %option{:value => "MT"} Montana
+              %option{:value => "NE"} Nebraska
+              %option{:value => "NV"} Nevada
+              %option{:value => "NH"} New Hampshire
+              %option{:value => "NJ"} New Jersey
+              %option{:value => "NM"} New Mexico
+              %option{:value => "NY"} New York
+              %option{:value => "NC"} North Carolina
+              %option{:value => "ND"} North Dakota
+              %option{:value => "OH"} Ohio
+              %option{:value => "OK"} Oklahoma
+              %option{:value => "OR"} Oregon
+              %option{:value => "PA"} Pennsylvania
+              %option{:value => "RI"} Rhode Island
+              %option{:value => "SC"} South Carolina
+              %option{:value => "SD"} South Dakota
+              %option{:value => "TN"} Tennessee
+              %option{:value => "TX"} Texas
+              %option{:value => "UT"} Utah
+              %option{:value => "VT"} Vermont
+              %option{:value => "VA"} Virginia
+              %option{:value => "WA"} Washington
+              %option{:value => "WV"} West Virginia
+              %option{:value => "WI"} Wisconsin
+              %option{:value => "WY"} Wyoming
+          %br
+          %br
+          %br
+          .form_field.float-left
+            %span.label_for_order_form Zip Code <span class="required_delivery">*</span>
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          .form_field_right.float-left
+            %span.label_for_order_form Phone No.
+            %br
+            %input.form_style{:name => "shipping_info", :type => "text", class: 'clearForm'}
+          %br
+          %br
+          %br
+      %br
+      %button.btn_style_order_form{style: 'margin-left: 12px;'}
+        GO TO NEXT STEP
+
+      

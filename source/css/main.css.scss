@@ -95,58 +95,37 @@ textarea {
    Author's custom styles
    ========================================================================== */
 //template styles
-#master{
-    margin: 10px auto 30px auto;
-    width: 950px;
-}
-
-#content_frame{
+#main_frame_order_form{
     width: 650px;
-    border: solid #BDBBB9 1px;
-    float: left;
-    border-radius: 6px;
-    box-shadow:2px 4px 4px 4px #cfcfcf; 
+    margin: 10px auto;
     background: white;
-    padding: 0 10px 20px 10px;
+    padding: 5px 10px 10px 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:2px 4px 4px 4px #cfcfcf; 
 }
 
-.form_background{
+.main_frame_background_order_form{
     background: #F5FAEE;
     margin-top: 10px;
     width: 620px;
     border-radius: 5px;
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
+    overflow: hidden;
 }
 
-.form_background_client_login{
-    width: 620px;
-    border-radius: 5px;
-    margin: 0 auto;
-    padding: 0px 10px 0 10px;
+.form_field_right{
+   margin-left: 15px;
 }
 
-#content_left{
-    float: left;
-    width: 200px;
+input.radio_btns{
+    margin-right: 4px;
 }
 
-#content_right{
-    float: right;
-    width: 310px;
-    position: relative;
-    top: -5px;
+.order_form{
+    
 }
-
-.vertical_line{
-    width:1px;
-    height:400px;
-    background-color:#cfcfcf;
-    position: absolute;
-    top: 20px;
-    left: -40px;
-}
-
 
 .form_background_white{
     background: white;
@@ -154,47 +133,56 @@ textarea {
     border: solid #cfcfcf 1px;
 }
 
+.jobtype_added_form{
+    display: none;
+}
+
+
 // font styles
+.signin-header{
+    font-weight: 100;
+}
+
 .order_form_header{
-    color: #514444;
-    font-weight: normal;
-    font-size: 120%;
+    margin-left: 7px;
 }
 
 .required{
-    color: #B93F1A;
-    font-weight: bold;
-    font-size: 125%;
-    vertical-align: bottom;
+    color: red;
 }
 
-.label_for_order_form {
-    font-weight: bold;
+.required_delivery{
+    color: red;
+}
+
+// Signup form styles
+#content_left_signup_form{
+    padding: 0 50px 0 0;
+    width: 300px;
+    float: left;
+}
+
+#content_right_signup_form{
+    float: right;
+    width: 295px;
+}
+
+.vertical_line{
+    border-left: solid #CCCCCC 1px;
+    height: 420px;
+    float: left;
+    position: relative;
+    right: 50px;
+    top: 2px;
 }
 
 //button styles
-.btn_style{
+.btn_style_order_form{
     padding: 5px 9px 5px 9px;
     border-radius: 5px;
     color: white;
     font-size: 13px;
-    background: #629E06;
-    border-style:none;
-    font-size: 12px;
-    &:hover{
-        background: #547A0F;
-    }
-    &:active{
-        background: #547A0F;
-    }
-}
-
-.btn_jobtype{
-    padding: 5px 9px 5px 9px;
-    border-radius: 5px;
-    color: white;
-    font-size: 13px;
-    background: #629E06;
+    background: #41A900;
     border-style:none;
     font-size: 12px;
     &:hover{
@@ -222,10 +210,6 @@ textarea {
     }
 }
 
-.radio_btns{
-    margin-right: 4px;
-}
-
 .closeBtn{
     float: right;
     margin-right: 20px;
@@ -239,33 +223,38 @@ textarea {
     padding-bottom: 3px;
 }
 
-
-
-//form styles
- .order_form {
-    display: inline-block;
-    outline: none;
-    color: #74646e;
-    border: 1px solid #C8BFC4;
-    box-shadow: inset 1px 1px 2px #ddd8dc;
-    background-color: #fff;     
-    font-size: 14px; 
-    width: 170px;  
+.add-entry{
+    float: right;
+    margin-right: 6px;
+    color:white;
+    border-radius: 4px;
+    font-size: 12px;
+    background: #962C1D;
+    font-weight: bold;
+    border-style: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: #629E20;   
 }
 
 //progress bar
+.progress-bar-container{
+    position: relative;
+    right: -20px;
+}
 .circle_active{
     border-radius: 50%;
-    width: 30px;
-    height: 30px; 
-    background: #629E06;
+    width: 28px;
+    height: 28px; 
+    background: #42A900;
 }
 
 .circle{
     border-radius: 50%;
-    width: 30px;
-    height: 30px; 
-    background: #B8B8B8;
+    width: 28px;
+    height: 28px; 
+    background: #e4e4e4;
+    margin-left: 115px;
 }
 
 .progress_number{
@@ -273,27 +262,50 @@ textarea {
     position: relative; 
     right: -10px; 
     top: 3px; 
-    font-size: 18px; 
+    font-size: 15px; 
     color: white; 
     float: left;
 }
 
-.progress_description_active{
-    float: left; 
-    font-size: 18px; 
-    position: relative; 
-    right: -10px; 
-    top: 5px;
+.active{
+    background: #41A900 !important;
+}
+
+.active-font{
+    color: #41A900 !important;
 }
 
 .progress_description{
     float: left; 
-    font-size: 18px; 
+    font-size: 12px; 
     position: relative; 
-    right: -10px; 
-    top: 5px;
-    color: #B8B8B8;
+    right: 20px; 
+    top: 10px;
+    color: #e4e4e4;
+    text-align: center;
+    width: 70px;
+    letter-spacing: 1px;
+    line-height: 14px;
 }
+
+.progress-line{
+     border-top: dotted #E4E4E4 1px ;
+     height: 1px;
+     width: 600px;
+     position: relative;
+     top: 15px;
+     right: -20px;
+}
+
+// Style Tools
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
